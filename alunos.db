@@ -1,14 +1,14 @@
--- Criar a tabela de alunos
+-- Criar a tabela de alunos com a restrição UNIQUE na coluna nome
 CREATE TABLE IF NOT EXISTS Alunos (
     id INTEGER PRIMARY KEY,
-    nome TEXT NOT NULL,
+    nome TEXT NOT NULL UNIQUE, -- Definindo o nome como único para evitar duplicatas
     idade INTEGER,
     classe INTEGER,
     Nota REAL
 );
 
--- Inserir registros na tabela Alunos
-INSERT INTO Alunos (nome, idade, classe, Nota)
+-- Inserir registros na tabela Alunos, garantindo que não haja duplicatas de nomes
+INSERT OR IGNORE INTO Alunos (nome, idade, classe, Nota)
 VALUES ('Isabella', 18, 12, 7.5),
        ('Rodrigo', 17, 11, 8.0),
        ('Rui', 16, 10, 6.5),
