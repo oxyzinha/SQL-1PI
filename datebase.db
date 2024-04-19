@@ -1,0 +1,31 @@
+-- Criação do Banco de Dados e Tabela
+CREATE TABLE Alunos (
+    ID INTEGER PRIMARY KEY,
+    Nome TEXT,
+    Idade INTEGER,
+    Classe INTEGER,
+    Nota REAL
+);
+
+-- Inserção de Dados na Tabela
+INSERT INTO Alunos (Nome, Idade, Classe, Nota) VALUES ('João', 16, 10, 85.5);
+INSERT INTO Alunos (Nome, Idade, Classe, Nota) VALUES ('Maria', 14, 9, 75.2);
+INSERT INTO Alunos (Nome, Idade, Classe, Nota) VALUES ('Pedro', 17, 10, 90.3);
+INSERT INTO Alunos (Nome, Idade, Classe, Nota) VALUES ('Ana', 13, 8, 82.7);
+INSERT INTO Alunos (Nome, Idade, Classe, Nota) VALUES ('Luiza', 15, 10, 88.9);
+
+-- Seleção de Dados
+SELECT * FROM Alunos;
+SELECT Nome, Idade FROM Alunos WHERE Idade > 15;
+SELECT Nome, Classe, Nota FROM Alunos WHERE Classe = 10;
+
+-- Operações de Agregação
+SELECT AVG(Nota) AS Media_Notas FROM Alunos;
+SELECT Nome, Nota FROM Alunos WHERE Nota = (SELECT MAX(Nota) FROM Alunos);
+
+-- Atualização e Exclusão de Dados
+UPDATE Alunos SET Nota = 90 WHERE ID = 3;
+DELETE FROM Alunos WHERE Idade < 12;
+
+-- Desafio
+SELECT Nome, Idade FROM Alunos ORDER BY Idade ASC LIMIT 1
