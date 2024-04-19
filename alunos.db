@@ -7,13 +7,18 @@ CREATE TABLE IF NOT EXISTS Alunos (
     Nota REAL
 );
 
--- Inserir registros na tabela Alunos, garantindo que não haja duplicatas de nomes
+-- Inserir registros na tabela Alunos, garantindo que não haja duplicatas de nomes e limitando a cinco registros
 INSERT OR IGNORE INTO Alunos (nome, idade, classe, Nota)
-VALUES ('Isabella', 18, 12, 7.5),
-       ('Rodrigo', 17, 11, 8.0),
-       ('Rui', 16, 10, 6.5),
-       ('Teresa', 18, 12, 9.0),
-       ('Carlos', 17, 11, 7.8);
+SELECT 'Isabella', 18, 12, 7.5
+UNION
+SELECT 'Rodrigo', 17, 11, 8.0
+UNION
+SELECT 'Rui', 16, 10, 6.5
+UNION
+SELECT 'Teresa', 18, 12, 9.0
+UNION
+SELECT 'Carlos', 17, 11, 7.8
+LIMIT 5;
 
 -- Consultas
 SELECT * FROM Alunos;
