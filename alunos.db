@@ -1,0 +1,48 @@
+-- Criar a tabela de alunos
+CREATE TABLE IF NOT EXISTS Alunos (
+    id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL,
+    idade INTEGER,
+    classe INTEGER,
+    Nota REAL
+);
+
+-- Inserir registros na tabela Alunos
+INSERT INTO Alunos (nome, idade, classe, Nota)
+VALUES ('Isabella', 18, 12, 7.5),
+       ('Rodrigo', 17, 11, 8.0),
+       ('Rui', 16, 10, 6.5),
+       ('Teresa', 18, 12, 9.0),
+       ('Carlos', 17, 11, 7.8);
+
+-- Consultas
+SELECT * FROM Alunos;
+
+SELECT nome, idade
+FROM Alunos
+WHERE idade > 15;
+
+SELECT nome, classe, Nota
+FROM Alunos
+WHERE classe = 10;
+
+SELECT AVG(Nota) AS media_notas
+FROM Alunos;
+
+SELECT nome, Nota
+FROM Alunos
+ORDER BY Nota DESC
+LIMIT 1;
+
+UPDATE Alunos
+SET Nota = 90
+WHERE id = 3;
+
+DELETE FROM Alunos
+WHERE idade < 12;
+
+-- Consulta para selecionar o nome e a idade do aluno mais novo na tabela
+SELECT nome, idade
+FROM Alunos
+ORDER BY idade
+LIMIT 1;
