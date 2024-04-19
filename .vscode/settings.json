@@ -3,8 +3,13 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
+<<<<<<< HEAD
             "name": "database",
             "database": "${workspaceFolder:SQL}/database.db"
+=======
+            "database": "${workspaceFolder:SQL}/datebase.db",
+            "name": "SQL"
+>>>>>>> 3ad75eeb1cb0ceebe52b99d1e9a0c3e685e655aa
         }
     ],
     "sqltools.useNodeRuntime": true
